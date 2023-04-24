@@ -29,7 +29,30 @@ using namespace std;
 typedef long long ll;
 ll ct = 0;
 
+void solve() {
+  int x, y, temp;
+  cin >> x >> y;
+
+  temp = x + y;
+
+  if(temp & 1){
+    cout << "-1 -1" << '\n';
+    return;
+  }
+
+  x -= (temp / 2);
+  if(x < 0) {
+    y += x;
+    x = 0;
+  }
+
+  cout << x << ' ' << y << '\n';
+} 
+
 int main() {
-  
+  int tc;
+  cin >> tc;
+  while(tc-- > 0)
+    solve();
   return 0;
 }
